@@ -83,7 +83,7 @@ st.pyplot(fig)
 
 #st.write('he world map of reproduction numbers (data from 3 days ago)')
 
-md1 = '<p style="font-family:Courier; color:Green; font-size: 20px;">The world map with reproduction number of countries respectively (the data from 5 days ago). Reproduction rate ≥ 1 is red group, Reproduction rate < 1 is blue group</p>'
+md1 = '<p style="font-family:Courier; color:Green; font-size: 20px;">The world map with reproduction number of countries respectively (the data from 5 days ago). Reproduction rate ≥ 1 is red group, Reproduction rate < 1 is blue group.</p>'
 
 st.markdown(md1, unsafe_allow_html=True)
 
