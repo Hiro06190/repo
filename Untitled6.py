@@ -54,7 +54,7 @@ x = pd.date_range(d2, periods=(d1-d2).days, freq='d')
 periods=(d1-d2).days
 xx=np.linspace(1,periods,periods)
 
-md = '<p style="font-family:Courier; color:Green; font-size: 20px;">By choosing Latvia, Angola, Bangladesh, Kenya, Malaysia on the selecting box, the fitting function, which using stochastic model, of the cumulative cases is plotted</p>'
+md = '<p style="font-family:Courier; color:Green; font-size: 20px;">By choosing Latvia, Angola, Bangladesh, Kenya, Malaysia on the selecting box, the fitting function, which using the stochastic model, of the cumulative cases is plotted</p>'
 
 st.markdown(md, unsafe_allow_html=True)
 fig = plt.figure(figsize=(8,6))
