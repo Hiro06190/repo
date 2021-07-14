@@ -54,7 +54,7 @@ x = pd.date_range(d2, periods=(d1-d2).days, freq='d')
 periods=(d1-d2).days
 xx=np.linspace(1,periods,periods)
 
-md = '<p style="font-family:Courier; color:Green; font-size: 20px;">By choosing Latvia, Angola, Bangladesh, Kenya, Malaysia on selecting box, the fitting function, which using stochastic model, of the cumulative cases is plotted</p>'
+md = '<p style="font-family:Courier; color:Green; font-size: 20px;">By choosing Latvia, Angola, Bangladesh, Kenya, Malaysia on the selecting box, the fitting function, which using stochastic model, of the cumulative cases is plotted</p>'
 
 st.markdown(md, unsafe_allow_html=True)
 fig = plt.figure(figsize=(8,6))
@@ -80,6 +80,13 @@ for region in selected_region:
     plt.legend(loc="upper left")
 st.pyplot(fig)
 #with col2:
+
+#st.write('he world map of reproduction numbers (data from 3 days ago)')
+
+md1 = '<p style="font-family:Courier; color:Green; font-size: 20px;">The world map with reproduction number of countries respectively (data from 5 days ago)</p>'
+
+st.markdown(md1, unsafe_allow_html=True)
+
 m = folium.Map(location=[50, 0], zoom_start=1)
 
 gdf = gpd.read_file('https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json')
