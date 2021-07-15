@@ -54,7 +54,7 @@ x = pd.date_range(d2, periods=(d1-d2).days, freq='d')
 periods=(d1-d2).days
 xx=np.linspace(1,periods,periods)
 
-md = '<p style="font-family:Courier; color:Green; font-size: 20px;">By choosing Latvia, Angola, Bangladesh, Kenya, Malaysia on the selecting box, the fitting function, which using the stochastic model, of the cumulative cases is plotted</p>'
+md = '<p style="font-family:Courier; color:Green; font-size: 20px;">The fitting functions explained in my attached note will be plotted, when Latvia, Angola, Bangladesh, Kenya or Malaysia is selected in the selection box ("Select a country")</p>'
 
 st.markdown(md, unsafe_allow_html=True)
 fig = plt.figure(figsize=(8,6))
@@ -83,7 +83,7 @@ st.pyplot(fig)
 
 #st.write('he world map of reproduction numbers (data from 3 days ago)')
 
-md1 = '<p style="font-family:Courier; color:Green; font-size: 20px;">The world map with reproduction number of countries respectively (the data from 5 days ago). Reproduction rate ≥ 1 is red group, Reproduction rate < 1 is blue group.</p>'
+md1 = '<p style="font-family:Courier; color:Green; font-size: 20px;">The world map with reproduction rate (using the data from 5 days ago). The countries with the reproduction rate ≥ 1 are colored in red, while those with the reproduction rate < 1 are colored in blue. </p>'
 
 st.markdown(md1, unsafe_allow_html=True)
 
