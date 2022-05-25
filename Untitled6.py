@@ -36,8 +36,24 @@ options = {"Cumulative Cases": 'total_cases',
 st.title('COVID-19 Dashboard: World Data')
 st.subheader('Source: https://ourworldindata.org/coronavirus')
 
-start_date = st.sidebar.date_input("Start Date", value=pd.to_datetime(df.index.min()))
-end_date = st.sidebar.date_input("End Date", value=pd.to_datetime(df.index.max()))
+
+
+min_date = value=pd.to_datetime(df.index.min())
+max_date = value=pd.to_datetime(df.index.max())
+selected_date = st.sidebar.date_input(
+    "Period", [min_date, max_date], max_value=max_date
+)
+
+start_date = selected_date[0].strftime("%Y-%m-%d")
+end_date = (
+    selected_date[1].strftime("%Y-%m-%d")
+    if len(selected_date) == 2
+    else max_date.strftime("%Y-%m-%d")
+)
+
+
+#start_date = st.sidebar.date_input("Start Date", value=pd.to_datetime(df.index.min()))
+#end_date = st.sidebar.date_input("End Date", value=pd.to_datetime(df.index.max()))
 
 if start_date < end_date:
     st.sidebar.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
