@@ -36,8 +36,10 @@ options = {"Cumulative Cases": 'total_cases',
 st.title('COVID-19 Dashboard: World Data')
 st.subheader('Source: https://ourworldindata.org/coronavirus')
 
-start_date = st.sidebar.date_input("Start Date", value=pd.to_datetime(df.index.min()))
-end_date = st.sidebar.date_input("End Date", value=pd.to_datetime(df.index.max()))
+#start_date = st.sidebar.date_input("Start Date", value=pd.to_datetime(df.index.min()))
+#end_date = st.sidebar.date_input("End Date", value=pd.to_datetime(df.index.max()))
+start_date = st.sidebar.date_input('Start date', start)
+end_date = st.sidebar.date_input("End Date", end)
 
 charts = st.sidebar.multiselect("Select individual charts to display:",
                 options=list(options.keys()),
