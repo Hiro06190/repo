@@ -72,7 +72,8 @@ for region in selected_region:
     df_tmp = df2[df2['location'] == region]
     df_tmp1=df_tmp['total_cases'][(df_tmp.index >= d2) & (df_tmp.index < d1)]
     for chart in charts:
-        df_tmp[options[chart]][start_date,end_date].plot(label=region + '_' + chart,xlim=[start_date, end_date])
+        df_tmp =df_tmp[(df_tmp.index >= start_date) & (df_tmp.index < end_date)]
+        df_tmp[options[chart]].plot(label=region + '_' + chart,xlim=[start_date, end_date])
         if region == 'Latvia' or region == 'Angola' or region == 'Bangladesh' or region == 'Kenya' or region == 'Malaysia':
             if chart == 'Cumulative Cases':
                 N=df_tmp1.values
