@@ -37,23 +37,8 @@ st.title('COVID-19 Dashboard: World Data')
 st.subheader('Source: https://ourworldindata.org/coronavirus')
 
 
-
-min_date = value=pd.to_datetime(df.index.min())
-max_date = value=pd.to_datetime(df.index.max())
-selected_date = st.sidebar.date_input(
-    "Period", [min_date, max_date], max_value=max_date
-)
-
-start_date = selected_date[0].strftime("%Y-%m-%d")
-end_date = (
-    selected_date[1].strftime("%Y-%m-%d")
-    if len(selected_date) == 2
-    else max_date.strftime("%Y-%m-%d")
-)
-
-
-#start_date = st.sidebar.date_input("Start Date", value=pd.to_datetime(df.index.min()))
-#end_date = st.sidebar.date_input("End Date", value=pd.to_datetime(df.index.max()))
+start_date = st.sidebar.date_input("Start Date", value=pd.to_datetime(df.index.min()))
+end_date = st.sidebar.date_input("End Date", value=pd.to_datetime(df.index.max()))
 
 if start_date < end_date:
     st.sidebar.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
@@ -80,13 +65,14 @@ xx=np.linspace(1,periods,periods)
 
 md = '<p style="font-family:Courier; color:Green; font-size: 20px;">The fitting functions explained in my attached note will be plotted, when Latvia, Angola, Bangladesh, Kenya or Malaysia is selected in the selection box ("Select a country")</p>'
 
+
 st.markdown(md, unsafe_allow_html=True)
 fig = plt.figure(figsize=(8,6))
 for region in selected_region:
     df_tmp = df2[df2['location'] == region]
     df_tmp1=df_tmp['total_cases'][(df_tmp.index >= d2) & (df_tmp.index < d1)]
     for chart in charts:
-        df_tmp[options[chart]].plot(label=region + '_' + chart)
+        df_tmp[options[chart]].plot(label=region + '_' + chart,xlim=[start_date, end_date])
         if region == 'Latvia' or region == 'Angola' or region == 'Bangladesh' or region == 'Kenya' or region == 'Malaysia':
             if chart == 'Cumulative Cases':
                 N=df_tmp1.values
