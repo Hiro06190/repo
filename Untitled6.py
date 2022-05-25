@@ -43,12 +43,12 @@ charts = st.sidebar.multiselect("Select individual charts to display:",
                 options=list(options.keys()),
                 default=list(options.keys())[0:1])
 
-x = pd.date_range(datetime(2020,4,1), periods=(datetime(2022,5,24)-datetime(2020,4,1)).days, freq='d')
+x = pd.date_range(datetime(2020,4,1), periods=(datetime(2021,1,31)-datetime(2020,4,1)).days, freq='d')
 
 def func(x, a,b):
     return a*np.exp(-b/((x)))*(b+(x))/(2*math.pi*b*(x))# Levy
 
-d1=datetime(2022,5,24)
+d1=datetime(2021,1,31)
 d2=datetime(2020,4,1)
 x = pd.date_range(d2, periods=(d1-d2).days, freq='d')
 periods=(d1-d2).days
