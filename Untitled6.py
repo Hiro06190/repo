@@ -94,7 +94,7 @@ st.pyplot(fig)
 
 #st.write('he world map of reproduction numbers (data from 3 days ago)')
 
-md1 = '<p style="font-family:Courier; color:Green; font-size: 20px;">The world map with reproduction rate (using the data of end date on side bar). The countries with the reproduction rate ≥ 1 are colored in red, while those with the reproduction rate < 1 are colored in blue. </p>'
+md1 = '<p style="font-family:Courier; color:Green; font-size: 20px;">The world map with reproduction rate (using the data of end date (of 5days ago) on side bar). The countries with the reproduction rate ≥ 1 are colored in red, while those with the reproduction rate < 1 are colored in blue. </p>'
 
 st.markdown(md1, unsafe_allow_html=True)
 
